@@ -1,9 +1,13 @@
-/**
- * Created by mgobbi on 10/04/2017.
- */
-import type from "./_type";
-export default (a,b)=>{
-    if (a === b) {
+import _arrayFromIterator from './_arrayFromIterator';
+import _functionName from './_functionName';
+import _has from './_has';
+import identical from './_identical';
+import keys from './_keys';
+import type from './_type';
+
+
+export default function _equals(a, b, stackA, stackB) {
+    if (identical(a, b)) {
         return true;
     }
 
@@ -14,6 +18,12 @@ export default (a,b)=>{
     if (a == null || b == null) {
         return false;
     }
+
+    if (typeof a.equals === 'function' || typeof b.equals === 'function') {
+        return typeof a.equals === 'function' && a.equals(b) &&
+            typeof b.equals === 'function' && b.equals(a);
+    }
+
     switch (type(a)) {
         case 'Arguments':
         case 'Array':
@@ -69,4 +79,31 @@ export default (a,b)=>{
             // Values of other types are only equal if identical.
             return false;
     }
-}
+
+    var keysA = keys(a);
+    if (keysA.length !== keys(b).length) {
+        return false;
+    }
+
+    var idx = stackA.length - 1;
+    while (idx >= 0) {
+        if (stackA[idx] === a) {
+            return stackB[idx] === b;
+        }
+        idx -= 1;
+    }
+
+    stackA.push(a);
+    stackB.push(b);
+    idx = keysA.length - 1;
+    while (idx >= 0) {
+        var key = keysA[idx];
+        if (!(_has(key, b) && _equals(b[key], a[key], stackA, stackB))) {
+            return false;
+        }
+        idx -= 1;
+    }
+    stackA.pop();
+    stackB.pop();
+    return true;
+};

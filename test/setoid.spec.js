@@ -2,17 +2,19 @@
  * Created by mgobbi on 11/04/2017.
  */
 var assert = require("chai").assert;
-import { equals, fromCallback, of} from "../promise-lib";
-describe('Setoid',  ()=> {
-    var a,b,c;
-    beforeEach(()=>{
-         a = of("equals");
-         b = fromCallback(function (resolve) {
+import of from "../src/of";
+import fromCallback from "../src/from-callback";
+import equals from "../src/equals";
+describe('Setoid', () => {
+    var a, b, c;
+    beforeEach(() => {
+        a = of({a: 1});
+        b = fromCallback(function (resolve) {
             setTimeout(() => {
-                resolve("equals");
+                resolve({a: 1});
             }, 300)
         });
-         c = of("equals");
+        c = of({a: 1});
     });
     it("reflexivity - a.equals(a) === true", done => {
         equals(a, a).then(result => {

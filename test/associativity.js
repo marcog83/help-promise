@@ -1,7 +1,9 @@
 /**
  * Created by mgobbi on 11/04/2017.
  */
-import {bind, equals, of} from "../promise-lib";
+import of from "../src/of";
+import {bind} from "../src/then-map-bind";
+import equals from "../src/equals";
 var assert = require("chai").assert;
 describe("Associativity", () => {
     it("(m >>= f) >>= g == m >>= (\\x -> f x >>= g)", done => {

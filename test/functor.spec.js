@@ -2,7 +2,9 @@
  * Created by mgobbi on 11/04/2017.
  */
 
-import {equals, map, of} from "../promise-lib";
+import of from "../src/of";
+import {map} from "../src/then-map-bind";
+import equals from "../src/equals";
 var assert = require("chai").assert;
 describe("Functor", () => {
     var a;
