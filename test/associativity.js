@@ -1,0 +1,19 @@
+/**
+ * Created by mgobbi on 11/04/2017.
+ */
+import {bind, equals, of} from "../promise-lib";
+var assert = require("chai").assert;
+describe("Associativity", () => {
+    it("(m >>= f) >>= g == m >>= (\\x -> f x >>= g)", done => {
+        var f = a => a * a;
+        var g = a => a - 6;
+        var m = of(7);
+        var left = bind(g, bind(f, m));
+        var right = bind(x => bind(g, of(f(x))), m);
+        equals(left, right).then(result => {
+            assert.isTrue(result);
+            done();
+        });
+    });
+
+});
