@@ -8,13 +8,12 @@ import of from "./src/of";
 import filter from "./src/filter";
 
 import fromCallback from "./src/from-callback";
-import {then , map, bind} from "./src/then-map-bind";
+import {bind, map, then} from "./src/then-map-bind";
 import alt from "./src/alt";
 import ap from "./src/ap";
 import {isZero, zero} from "./src/zero";
 import concat from "./src/concat";
-
-export  {
+export default {
     compose
     , equals
     , concat

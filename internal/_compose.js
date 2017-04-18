@@ -2,7 +2,7 @@
  * Created by mgobbi on 17/03/2017.
  */
 // Performs left-to-right composition of one or more Promise-returning functions.
-import of from "./of";
+import of from "../src/of";
 export default function (...fns) {
     var ctx = this;
     fns.reverse();
