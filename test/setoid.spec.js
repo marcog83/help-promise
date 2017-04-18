@@ -5,7 +5,7 @@ var assert = require("chai").assert;
 import of from "../src/of";
 import fromCallback from "../src/from-callback";
 import equals from "../src/equals";
-describe('Setoid', () => {
+describe('Setoid - equals :: Setoid s => Type s ~> (s, s) → Boolean', () => {
     var a, b, c;
     beforeEach(() => {
         a = of({a: 1});
@@ -16,13 +16,13 @@ describe('Setoid', () => {
         });
         c = of({a: 1});
     });
-    it("reflexivity - a.equals(a) === true", done => {
+    it("Reflexivity - equals(a, a) === true", done => {
         equals(a, a).then(result => {
             assert.isTrue(result);
             done();
         }).catch(done);
     });
-    it("symmetry - a.equals(b) === b.equals(a)", done => {
+    it("Symmetry - equals(a, b) === equals(b, a)", done => {
         Promise.all([
             equals(a, b)
             , equals(b, a)
@@ -31,7 +31,7 @@ describe('Setoid', () => {
             done();
         }).catch(done);
     });
-    it("transitivity - a.equals(b) and b.equals(c), then a.equals(c)", done => {
+    it("Transitivity - if equals(a, b) and equals(b, c), then equals(a, c)", done => {
         Promise.all([
             equals(a, b)
             , equals(b, c)

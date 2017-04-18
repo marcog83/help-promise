@@ -6,7 +6,7 @@ import of from "../src/of";
 import {map} from "../src/then-map-bind";
 import equals from "../src/equals";
 var assert = require("chai").assert;
-describe("Functor", () => {
+describe("Functor - map :: Functor f => Type f ~> (a → b, f a) → f b", () => {
     var a;
     var f;
     var g;
@@ -17,15 +17,15 @@ describe("Functor", () => {
         g = a => a + "g";
         u = a => a;
     });
-    it("identity - u.map(a => a) is equivalent to u", done => {
+    it("Identity - map(x => x, a) ≡ a", done => {
         equals(map(u, a), a)
             .then(result => {
                 assert.isTrue(result);
                 done();
             });
     });
-    it("composition - u.map(x => f(g(x))) is equivalent to u.map(g).map(f)", done => {
-        equals(map(u, a), a)
+    it("Composition - map(x => f(g(x)), a) ≡ map(f, map(g, a))", done => {
+        equals(map(x => f(g(x)), a), map(f, map(g, a)))
             .then(result => {
                 assert.isTrue(result);
                 done();

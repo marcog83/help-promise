@@ -24,7 +24,7 @@ describe("Monad", () => {
         return Promise.resolve(x);
     }
 
-    it("Law 1 - f bound to unit(a) == f(a) (unit a >>= f == f)", done => {
+    it("Left identity: bind(f, of(a)) ≡ f(a)", done => {
         var leftResult = bind(f, of(a));
         var rightResult = f(a);
         equals(leftResult, rightResult).then(result => {
@@ -33,7 +33,7 @@ describe("Monad", () => {
             done();
         }).catch(done);
     });
-    it("Law 2 - unit bound to promise value == promise value ( m >>= unit == m)", done => {
+    it("Right identity: bind(of, u) ≡ u", done => {
         var leftResult = bind(of, m(a));
 
         var rightResult = m(a);
