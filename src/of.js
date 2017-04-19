@@ -1,4 +1,5 @@
 /**
  * Created by mgobbi on 17/03/2017.
  */
-export default  x=> Promise.resolve(x);
+import curry from "../internal/_curry";
+export default  curry(x=> Promise.resolve(x));

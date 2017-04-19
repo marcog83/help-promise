@@ -4,6 +4,7 @@
 
 import compose from "./internal/_compose";
 import equals from "./src/equals";
+import tap from "./src/tap";
 import of from "./src/of";
 import filter from "./src/filter";
 
@@ -13,6 +14,7 @@ import alt from "./src/alt";
 import ap from "./src/ap";
 import {isZero, zero} from "./src/zero";
 import concat from "./src/concat";
+
 export default {
     compose
     , equals
@@ -26,6 +28,7 @@ export default {
     , filter
     , alt
     , isZero
+    , tap
     , zero
 }
 

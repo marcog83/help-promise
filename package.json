@@ -7,23 +7,19 @@
     "test": "test"
   },
   "scripts": {
-    "build-umd": "browserify -t [ babelify --presets [ latest import-export ] ] -g uglifyify help-promise.js -o dist/help-promise.min.js"
-  },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
+    "rollup-bundle": "rollup -c",
+    "babel-rollup": "babel --out-dir ./ --source-maps --presets latest --presets import-export --plugins transform-es2015-modules-umd dist/help-promise.js",
+    "uglify": "uglifyjs --compress --mangle -o dist/help-promise.min.js dist/help-promise.js",
+    "build": "npm run rollup-bundle && npm run babel-rollup && npm run uglify"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-import-export": "^1.0.2",
     "babel-preset-latest": "^6.24.1",
-    "babelify": "^7.3.0",
     "chai": "^3.5.0",
-    "mocha": "^3.2.0",
-    "uglifyify": "^3.0.4"
+    "mocha": "^3.2.0"
   }
 }

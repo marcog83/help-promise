@@ -7,12 +7,12 @@
 
  **/
 import flatten from "../internal/_flatten";
-
-export default (left, right) => {
+import curry from "../internal/_curry";
+export default curry((left, right) => {
     return Promise.all([left, right]).then((results) => {
         let _flat = flatten(results);
         return _flat.reduce((xs, x) => {
             return xs.concat(x);
         }, []);
     })
-};
+});

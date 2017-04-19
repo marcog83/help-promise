@@ -1,4 +1,10 @@
 {
-  "presets": ["latest","import-export"]
-  ,"plugins": ["transform-es2015-modules-umd"]
+  "presets": [
+    "latest",
+    "import-export"
+  ],
+  "moduleId": "_p",
+  "plugins": [
+    "transform-es2015-modules-umd"
+  ]
 }
