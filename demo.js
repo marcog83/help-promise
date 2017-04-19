@@ -1,11 +1,15 @@
 /**
  * Created by mgobbi on 18/04/2017.
  */
-var _p = _p.default;
-var composed = _p.compose(
-    _p.tap(x => console.log(x))
-    , _p.map(x => x + " mappato")
-    , _p.of
+var compose = _p.default.compose;
+var tap = _p.default.tap;
+var map = _p.default.map;
+var of = _p.default.of;
+var composed = compose(
+    tap(x => console.log("side effect!!!",x))
+    , map(x => "Hello, "+x+"!")
+    , of
 );
 
-composed("ciao").then(x => console.log("2", x));
+composed("Bob").then(x => console.log(x));
+composed("John").then(x => console.log(x));
