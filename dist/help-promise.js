@@ -1,29 +1,29 @@
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define('_p', ['exports'], factory);
+        define('pall', ['module', 'exports'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(exports);
+        factory(module, exports);
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod.exports);
-        global._p = mod.exports;
+        factory(mod, mod.exports);
+        global.pall = mod.exports;
     }
-})(this, function (exports) {
+})(this, function (module, exports) {
     (function (global, factory) {
         if (typeof define === "function" && define.amd) {
-            define('_p', ['exports'], factory);
+            define('pall', ['module', 'exports'], factory);
         } else if (typeof exports !== "undefined") {
-            factory(exports);
+            factory(module, exports);
         } else {
             var mod = {
                 exports: {}
             };
-            factory(mod.exports);
-            global._p = mod.exports;
+            factory(mod, mod.exports);
+            global.pall = mod.exports;
         }
-    })(this, function (exports) {
+    })(this, function (module, exports) {
         'use strict';
 
         Object.defineProperty(exports, "__esModule", {
@@ -453,7 +453,7 @@
         /**
          * Created by mgobbi on 12/04/2017.
          */
-        function ap(funcPromise, valuePromise) {
+        var ap = curry(function ap(funcPromise, valuePromise) {
             return Promise.all([funcPromise, valuePromise]).then(function (_ref5) {
                 var _ref6 = _slicedToArray(_ref5, 2),
                     func = _ref6[0],
@@ -461,8 +461,7 @@
 
                 return func(value);
             });
-        }
-        var ap$1 = curry(ap);
+        });
 
         /**
          * Created by mgobbi on 12/04/2017.
@@ -499,7 +498,7 @@
             equals: equals,
             concat: concat,
             of: of,
-            ap: ap$1,
+            ap: ap,
             fromCallback: fromCallback,
             then: then,
             bind: bind,
@@ -512,6 +511,7 @@
         };
 
         exports.default = helpPromise;
+        module.exports = exports['default'];
     });
 });
 //# sourceMappingURL=help-promise.js.map
