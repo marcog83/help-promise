@@ -1,9 +1,9 @@
-#Help Promise
-##Installation
+# Help Promise
+## Installation
 ```
 bower install help-promise 
 ```
-##Usage
+## Usage
 ```javascript 
 import {compose,tap,map} from "help-promise";
 
