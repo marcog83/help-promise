@@ -26,9 +26,9 @@ var  a = of(123),
      c = of({a: 1, b: 2, c: 3});
      
 var left=concat(concat(a, b), c);
-var right=concat(a, concat(b, c));
-equals(left, right).then(x => {
-       console.log(x)//true;
+ 
+left.then(x => {
+       console.log(x)//[123, "abc", {a: 1, b: 2, c: 3}];
     })
 ```
 ## fromCallback
@@ -53,8 +53,7 @@ never().then(x=>{
 ## of
 Create a new Promise from a value.
 ```javascript
-of(42).then(x=>{
-    
+of(42).then(x=>{    
     console.log(x);//42
 })
 ```
@@ -68,6 +67,16 @@ of(42).then(x=>{
 
  
 ## alt
+Create a promise that resolve or reject the first promise that will be resolved/rejected. (Promise.race)
+```
+
+var a=fromCallback(r=>setTimeout(r(1),1000));
+var b=of(42);
+alt(a,b).then(x=>{
+console.log(x)//42
+})
+```
+
 ## ap
 ## bind
 ## map

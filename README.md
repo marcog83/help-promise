@@ -1,4 +1,4 @@
-# Help Promise
+# pall
 ## Installation
 ```
 bower install help-promise 
