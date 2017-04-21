@@ -1,29 +1,29 @@
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define('pall', ['module', 'exports'], factory);
+        define('pall', ['exports'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(module, exports);
+        factory(exports);
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod, mod.exports);
+        factory(mod.exports);
         global.pall = mod.exports;
     }
-})(this, function (module, exports) {
+})(this, function (exports) {
     (function (global, factory) {
         if (typeof define === "function" && define.amd) {
-            define('pall', ['module', 'exports'], factory);
+            define('pall', ['exports'], factory);
         } else if (typeof exports !== "undefined") {
-            factory(module, exports);
+            factory(exports);
         } else {
             var mod = {
                 exports: {}
             };
-            factory(mod, mod.exports);
+            factory(mod.exports);
             global.pall = mod.exports;
         }
-    })(this, function (module, exports) {
+    })(this, function (exports) {
         'use strict';
 
         Object.defineProperty(exports, "__esModule", {
@@ -493,25 +493,20 @@
          * Created by mgobbi on 10/03/2017.
          */
 
-        var helpPromise = {
-            compose: compose,
-            equals: equals,
-            concat: concat,
-            of: of,
-            ap: ap,
-            fromCallback: fromCallback,
-            then: then,
-            bind: bind,
-            map: map,
-            filter: filter,
-            alt: alt,
-            isZero: isZero,
-            tap: tap,
-            zero: zero
-        };
-
-        exports.default = helpPromise;
-        module.exports = exports['default'];
+        exports.compose = compose;
+        exports.equals = equals;
+        exports.concat = concat;
+        exports.of = of;
+        exports.ap = ap;
+        exports.fromCallback = fromCallback;
+        exports.then = then;
+        exports.bind = bind;
+        exports.map = map;
+        exports.filter = filter;
+        exports.alt = alt;
+        exports.isZero = isZero;
+        exports.tap = tap;
+        exports.zero = zero;
     });
 });
-//# sourceMappingURL=help-promise.js.map
+//# sourceMappingURL=pall.js.map

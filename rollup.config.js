@@ -3,9 +3,9 @@
  */
 // rollup.config.js
 export default {
-    entry: 'help-promise.js',
+    entry: 'pall.js',
     format: 'es',
     // format: 'umd',
    // moduleName:"_p",
-    dest: 'dist/help-promise.js' // equivalent to --output
+    dest: 'dist/pall.js' // equivalent to --output
 };

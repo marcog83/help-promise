@@ -15,7 +15,7 @@ import ap from "./src/ap";
 import {isZero, zero} from "./src/zero";
 import concat from "./src/concat";
 
-export default {
+export  {
     compose
     , equals
     , concat

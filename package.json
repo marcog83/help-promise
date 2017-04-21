@@ -2,14 +2,14 @@
   "name": "pall",
   "version": "1.0.0",
   "description": "",
-  "main": "help-promise.js",
+  "main": "dist/pall.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "rollup-bundle": "rollup -c",
-    "babel-rollup": "babel --out-dir ./ --source-maps --presets latest,import-export --plugins add-module-exports,transform-es2015-modules-umd dist/help-promise.js",
-    "uglify": "uglifyjs --compress cascade,join_vars,if_return,unused,loops,booleans,evaluate,comparisons,conditionals,drop_debugger,sequences,properties,dead_code --mangle -o dist/help-promise.min.js dist/help-promise.js",
+    "babel-rollup": "babel --out-dir ./ --source-maps --presets latest,import-export --plugins add-module-exports,transform-es2015-modules-umd dist/pall.js",
+    "uglify": "uglifyjs --compress cascade,join_vars,if_return,unused,loops,booleans,evaluate,comparisons,conditionals,drop_debugger,sequences,properties,dead_code --mangle -o dist/pall.min.js dist/pall.js",
     "build": "npm run rollup-bundle && npm run babel-rollup && npm run uglify"
   },
   "author": "",
