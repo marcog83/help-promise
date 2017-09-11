@@ -3,9 +3,10 @@
  */
 // rollup.config.js
 export default {
-    entry: 'pall.js',
-    format: 'es',
-    // format: 'umd',
-   // moduleName:"_p",
-    dest: 'dist/pall.js' // equivalent to --output
+    input: 'pall.js',
+
+    output: {
+        file:'dist/pall.js'
+        ,format:'es'
+    } // equivalent to --output
 };
