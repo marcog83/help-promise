@@ -6,7 +6,8 @@ import of from "../src/of";
 import alt from "../src/alt";
 import equals from "../src/equals";
 import {map} from "../src/then-map-bind";
-var assert = require("chai").assert;
+// var assert = require("chai").assert;
+import {assert} from "chai";
 describe("Alt - alt :: Alt f => Type f ~> (f a, f a) → f a", () => {
     var a, b, c;
     var f = _ => _;

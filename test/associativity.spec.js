@@ -4,7 +4,7 @@
 import of from "../src/of";
 import {bind} from "../src/then-map-bind";
 import equals from "../src/equals";
-var assert = require("chai").assert;
+import {assert} from "chai";
 describe("Associativity", () => {
     it("(m >>= f) >>= g == m >>= (\\x -> f x >>= g)", done => {
         var f = a => a * a;

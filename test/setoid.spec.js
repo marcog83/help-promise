@@ -1,7 +1,7 @@
 /**
  * Created by mgobbi on 11/04/2017.
  */
-var assert = require("chai").assert;
+import {assert} from "chai";
 import of from "../src/of";
 import fromCallback from "../src/from-callback";
 import equals from "../src/equals";

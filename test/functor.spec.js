@@ -5,7 +5,7 @@
 import of from "../src/of";
 import {map} from "../src/then-map-bind";
 import equals from "../src/equals";
-var assert = require("chai").assert;
+import {assert} from "chai";
 describe("Functor - map :: Functor f => Type f ~> (a → b, f a) → f b", () => {
     var a;
     var f;

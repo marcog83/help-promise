@@ -1,7 +1,7 @@
 # pall
 ## Installation
 ```
-bower install help-promise 
+npm install pall
 ```
 ## Usage
 ```javascript 

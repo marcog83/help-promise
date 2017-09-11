@@ -1,7 +1,7 @@
 /**
  * Created by mgobbi on 12/04/2017.
  */
-var assert = require("chai").assert;
+import {assert} from "chai";
 import of from "../src/of";
 import concat from "../src/concat";
 import equals from "../src/equals";

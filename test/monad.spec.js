@@ -4,7 +4,7 @@
 import of from "../src/of";
 import {bind} from "../src/then-map-bind";
 import equals from "../src/equals";
-var assert = require("chai").assert;
+import {assert} from "chai";
 describe("Monad", () => {
     // Expected values for validation
     var a = {name: 'a'};

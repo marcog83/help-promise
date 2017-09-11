@@ -4,7 +4,7 @@
 import ap from "../src/ap";
 import of from "../src/of";
 import equals from "../src/equals";
-let assert = require("chai").assert;
+import {assert} from "chai";
 describe("Applicative - of :: Applicative f => Type f ~> a → f a", () => {
     let v, f, x,   y;
     beforeEach(() => {

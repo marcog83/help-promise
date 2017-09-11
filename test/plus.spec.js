@@ -7,7 +7,7 @@ import of from "../src/of";
 import {map} from "../src/then-map-bind";
 import {zero} from "../src/zero";
 import equals from "../src/equals";
-var assert = require("chai").assert;
+import {assert} from "chai";
 describe("Plus", () => {
     var x, _zero, f;
     beforeEach(() => {

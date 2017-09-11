@@ -78,10 +78,55 @@ console.log(x)//42
 ```
 
 ## ap
+Applicative law
+```
+var renderPage = function(destinations){
+    return function(events){
+         return `<div>some page with ${destinations} and ${events}</div>`
+    }
+};
+
+var p1=ap(of(renderPage),of('destinations'));
+ap(p1,of('events')).then(response => {
+                        console.log(response);
+                        //<div>some page with destinations and events</div>
+                    })
+```
 ## bind
 ## map
-## tap
 ## then
-
+Functor  
+map(fn, x)
+return Promise x
+```
+map(x=>x+1,of(3)) 
+.then(response=>{
+    console.log(response)//4
+})
+```
+## tap
+tap(fn, x)
+return Promise x;
+```
+ tap(x=>console.log(x),of(3))
+.then(response=>{
+    console.log(response)//3
+})
+```
 ## filter
+Filter over a predicate function
+filter(fn, x)
+return Promise x
+```
+
+filter(x => x != "Bob",of("Bob"))
+.then(r=>{
+    // never happens
+});
+
+filter(x => x != "Bob",of("John"))
+.then(r=>{
+    // r=="John"
+})
+```
 ## equals
