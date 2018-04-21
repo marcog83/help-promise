@@ -5,7 +5,7 @@ npm install pall
 ```
 ## Usage
 ```javascript 
-import {compose,tap,map} from "help-promise";
+import {compose,tap,map} from "pall";
 
 var composed=compose(
     tap(x=>console.log("side effect!!!",x))
