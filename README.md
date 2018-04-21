@@ -1,4 +1,5 @@
 # pall
+Pall add functionalities to Promise. It uses native Promise, following [static-land](https://github.com/rpominov/static-land) specification
 ## Installation
 ```
 npm install pall
@@ -25,3 +26,5 @@ composed("John").then(result=>console.log(result))
 
 [see api docs](api.md)
 
+## Contribute
+please feel free to open issues or pull requests if some implementations are not right. Just because it works does not mean it is correct. 
