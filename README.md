@@ -21,4 +21,7 @@ composed("John").then(result=>console.log(result))
 // Hello John!
 ```
 
+## API
+
+[see api docs](api.md)
 
