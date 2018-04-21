@@ -2,10 +2,10 @@
  * Created by mgobbi on 17/03/2017.
  */
 
-const _zero = Promise.resolve(false);
+const ZERO = Promise.resolve(Symbol("zeroPromise"));
 
 export var isZero = p => {
-    return p === _zero;
+    return p === ZERO;
 };
-export var zero = () => _zero;
+export var zero = () => ZERO;
 
